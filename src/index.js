@@ -1,6 +1,19 @@
+function towelSort(matrix) {
+  if (!matrix || matrix.length === 0) {
+    return [];
+  }
 
-// You should implement your task here.
+  const sortedList = [];
 
-module.exports = function towelSort (matrix) {
-  return [];
+  for (let i = 0; i < matrix.length; i++) {
+    if (i % 2 === 0) {
+      sortedList.push(...matrix[i]);
+    } else {
+      sortedList.push(...matrix[i].reverse());
+    }
+  }
+
+  return sortedList;
 }
+
+module.exports = towelSort;
